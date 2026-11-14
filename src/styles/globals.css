@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+/* ============================================================ pitch black & white design tokens */
+
+@theme {
+  --color-void: #000000;
+  --color-abyss: #040404;
+  --color-panel: #0a0a0a;
+  --color-elevated: #111111;
+  --color-accent: #ffffff;
+  --color-accent-soft: #d4d4d8;
+  --color-success: #00ff88;
+  --color-warning: #ffb800;
+  --color-danger: #ff3344;
+  --color-ink: #ffffff;
+  --color-ink-muted: #888888;
+  --color-line: #1c1c1c;
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-panel: 0.125rem;
+  --radius-chip: 0.125rem;
+
+  --shadow-panel: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* ============================================================== base layer */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    background-color: #000000;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  :focus-visible {
+    outline: 1.5px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  /* Razor-thin monochrome scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #262626 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 2px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
+}
+
+/* ============================================================ component layer */
+
+@layer components {
+  .panel {
+    background-color: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.7);
+  }
+
+  .panel-elevated {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .label-tech {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #888888;
+    font-weight: 500;
+  }
+
+  .value-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .hairline {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .grid-noise {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .scanline-overlay {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+}
+
+/* ============================================================== utilities */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ============================================================ 21st.dev animations */
+
+@keyframes mf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mf-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes mf-radar {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes mf-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes mf-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-fade-up {
+  animation: mf-fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-pulse-dot {
+  animation: mf-pulse 1.6s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: mf-radar 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-border-beam {
+  animation: border-beam calc(var(--duration)*1s) infinite linear;
+}
+
+.animate-shimmer {
+  animation: mf-shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+.animate-scan {
+  animation: mf-scan 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================== print */
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  header,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .panel,
+  .panel-elevated {
+    border-color: #cccccc;
+    background: #ffffff;
+    break-inside: avoid;
+  }
+
+  .text-ink,
+  .text-ink-muted {
+    color: #111111 !important;
+  }
+}

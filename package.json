@@ -1,0 +1,57 @@
+{
+  "name": "missionforge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MISSIONFORGE — Educational Space Mission Design & Simulation Game",
+  "homepage": "https://github.com/sayyidrafidalhadi/NASA-Space-Apps-Challenge#readme",
+  "bugs": {
+    "url": "https://github.com/sayyidrafidalhadi/NASA-Space-Apps-Challenge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayyidrafidalhadi/NASA-Space-Apps-Challenge.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/manrope": "^5.2.6",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@types/three": "^0.187.0",
+    "framer-motion": "^14.14.0",
+    "lucide-react": "^1.72.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "^7.9.4",
+    "recharts": "^3.10.1",
+    "three": "^0.187.0",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.3.0",
+    "eslint": "^9",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}
