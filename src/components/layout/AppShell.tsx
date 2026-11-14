@@ -85,7 +85,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   const toggleSound = () => {
     const next = !soundActive;
-    settings.update({ soundEnabled: next });
+    // Use the store's toggleSound action instead of a non‑existent update method
+    settings.toggleSound();
     sound.enabled = next;
     setSoundActive(next);
     if (next) sound.telemetryChirp();
