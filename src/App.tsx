@@ -8,7 +8,9 @@ import { LaunchVehiclePage } from "@/pages/LaunchVehiclePage";
 import { OrbitalPlanningPage } from "@/pages/OrbitalPlanningPage";
 import { SimulationPage } from "@/pages/SimulationPage";
 import { TelemetryPage } from "@/pages/TelemetryPage";
-import { EvaluationPage } from "@/pages/EvaluationPage";
+import { RocketGamePage } from '@/pages/RocketGamePage';
+import { EvaluationPage } from '@/pages/EvaluationPage';
+
 
 /**
  * Application routes.
@@ -29,7 +31,7 @@ export function App() {
         <Route path="/simulation" element={<SimulationPage />} />
         <Route path="/telemetry" element={<TelemetryPage />} />
         <Route path="/evaluation" element={<EvaluationPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/game" element={<RocketGamePage />} />
       </Routes>
     </AppShell>
   );

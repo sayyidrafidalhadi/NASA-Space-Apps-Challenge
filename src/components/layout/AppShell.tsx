@@ -19,7 +19,7 @@ import { useSimulationStore } from "@/store/simulationStore";
 import { useSettingsStore } from "@/store/settingsStore";
 import { StatusDot } from "@/components/ui/Metric";
 import { IconButton } from "@/components/ui/Button";
-import { GridPattern } from "@/components/ui/GridPattern";
+import PatternWaves from '@/components/ui/PatternWaves';
 import { DataSourcesModal } from "@/components/DataSourcesModal";
 import { SettingsDrawer } from "@/components/SettingsDrawer";
 import { sound } from "@/utils/sound";
@@ -97,7 +97,17 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="relative flex min-h-screen flex-col bg-black text-white selection:bg-white selection:text-black">
       {/* 21st.dev Background Coordinate Grid */}
-      <GridPattern className="opacity-40" />
+      <PatternWaves
+    preset="silk"
+    color="#ffffff"
+    backgroundColor="#111111"
+    fade="edges"
+    interactive
+    cursorSize={50}
+    cursorStrength={0.6}
+    opacity={0.8}
+    style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+  />
 
       {/* ------------------------------------------------------------ header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-md">

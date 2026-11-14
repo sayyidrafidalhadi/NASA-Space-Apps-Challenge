@@ -197,3 +197,5 @@ export function Spacecraft3D({ config, quality = "high", spin = true, scale = 1 
     </group>
   );
 }
+
+export default Spacecraft3D;
